@@ -1,0 +1,41 @@
+"use strict";
+
+let config = {};
+config.db = {}; // MongoDB
+config.models = {}; // Models
+
+
+
+// MongoDB
+config.db.db_without_auth = {
+    server_name: 'localhost',
+    server_db: 'db'
+};
+config.db.db_without_auth.server_string_connection = 'mongodb://' +
+    config.db.db_without_auth.server_name + '/' + 
+    config.db.db_without_auth.server_db;
+
+config.db.db_with_auth = {
+    server_name: 'localhost',
+    server_db: 'db',
+    server_user: 'user',
+    server_password: 'password'
+};
+config.db.db_with_auth.server_string_connection = 'mongodb://' + 
+        config.db.db_with_auth.server_user + ':' +
+        config.db.db_with_auth.server_password + '@' +
+        config.db.db_with_auth.server_name + '/' + 
+        config.db.db_with_auth.server_db;
+
+config.db.db_auth = 'db_without_auth';
+
+
+// Modelos
+config.models.anuncios = {
+    tags: ['work', 'lifestyle', 'motor', 'mobile']
+};
+
+
+
+
+module.exports = config;
